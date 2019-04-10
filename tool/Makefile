@@ -6,7 +6,7 @@ DIRSRCPERSISTENCE := src/persistence/
 DIRGENERATEXML := generate_boards_xml/
 DIRXML := xml/
 
-VERSION=2016
+VERSION=2018
 
 GENERATEXML_FILE := generateBoardsXML_$(VERSION).tcl
 
@@ -39,9 +39,9 @@ OBJECTS := $(foreach x,$(OBJECTS),$(DIROBJ)$(x))
 
 
 build: 
-	@echo "[INFO] Make sure to indicate the Vivado version <make build VERSION=2016> for 2016.4"
+	@echo "[INFO] Make sure to indicate the Vivado version <make build VERSION=2018> for 2018.3"
 	@echo "[INFO] Make sure to export Vivado tools"
-	make clean dirs generate_xml write_factory_bitstreams language dynDeT
+	make clean dirs generate_xml language dynDeT
 
 
 dirs:
@@ -96,7 +96,7 @@ install: #generate_xml write_factory_bitstreams dynDeT
 	install -m 655 bin/dynDeT /usr/bin
 
 write_factory_bitstreams:
-	@cd ../write_factory_bitstreams/ ;\
+	@cd write_factory_bitstreams/ ;\
 	make; cd -
 
 
