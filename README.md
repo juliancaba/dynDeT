@@ -46,7 +46,7 @@ dynDeT depends on other tools and libraries that are listed below.
 
 `$ make all`
 
-`$ make install`
+`# make install`
 
 `$ make run`
 

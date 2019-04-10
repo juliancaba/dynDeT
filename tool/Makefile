@@ -39,7 +39,7 @@ OBJECTS := $(foreach x,$(OBJECTS),$(DIROBJ)$(x))
 
 .PHONY: write_factory_bitstreams
 
-all: build
+all: build write_factory_bitstreams
 
 build: 
 	@echo "[INFO] Make sure to indicate the Vivado version <make build VERSION=2018> for 2018.3"
