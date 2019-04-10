@@ -1,20 +1,21 @@
-# Herramienta de desarrollo de aplicaciones dinámicamente reconfigurables en FPGA #
+# dynDeT: **dyn**amic partial reconfiguration **De**sign **T**ool #
 
-La reconfiguración dinámica es una técnica que permite reprogramar regiones de la FPGA sin que ésta tenga que detenerse, es decir, uno puede adaptar diseños ya implementados agregando o modificando funcionalidades a la FPGA en tiempo de ejecución.
+Dynamic reconfiguration is a technique that allows user to modify regions of the FPGA without stop it, that is, users can adapt designs already implemented by adding or modifying functionalities to the FPGA at runtime
 
-Dado que explotar esta técnica con las herramientas de diseño actuales puede llegar a ser complejo o poco intuitivo para el usuario, **el objetivo es desarrollar una herramienta que simplifique el proceso necesario para diseñar una aplicación dinámicamente reconfigurable**.
+Exploiting this technique with current design tools can be complex for users, so **the objective of this tool is to simplify the process necessary to design a dynamically reconfigurable application**
 
 
-## Uso de librerías externas ##
-A continuación se muestran las librerías utilizadas por la herramienta de este TFG. Es necesario disponer de estas librerías antes de compilar la herramienta.
 
-* [CTemplate](https://github.com/OlafvdSpek/ctemplate). Proporciona un sistema de plantillas de texto fácil, rápido y eficiente para programas escritos en C++. Utilizado para generar los ficheros que describen el diseño del sistema (design.tcl).
+## Dependencies ##
+dynDeT depends on other tools or libraries that are listes below.
 
-    **Instalación**
+* [CTemplate](https://github.com/OlafvdSpek/ctemplate). Provides an easy, fast and efficient system of text templates for programs written in C++. Used to generate the files describing the system design (design.tcl).
 
-    `$ unzip ctemplate-master.zip`
+    **Instalation**
+
+    `$ clone or download from gitHub ctemplate project`
     
-    `$ cd ctemplate-master`
+    `$ cd ctemplate`
     
     `$ ./autogen.sh`
     
@@ -22,17 +23,26 @@ A continuación se muestran las librerías utilizadas por la herramienta de este
     
     `$ make`
     
-    `# make install`
+    `# make install` // This command as sudo or root (privileged mode)
 
-* [Qt5](https://www.qt.io/download/). Librería utilizada para el desarrollo de la interfaz gráfica en C++ (licencia GNU LGPL).
+* [Qt5](https://www.qt.io/download/). Library used for the development of the graphical interface in C++ (GNU LGPL license).
 
-    **Instalación**
+    **Instalation**
 
     `# apt-get install qt5-default`
 
+* [Vivado from Xilinx](https://www.xilinx.com/products/design-tools/vivado.html)
 
-## Compilar, instalar y ejecutar ##
-La compilación y la ejecución de la herramienta se realiza a través de _make_:
+
+* [Make] is a build automation tool that automatically builds executable programs and libraries from source code by reading files called Makefiles which specify how to derive the target program.
+
+    **Instalation**
+
+    `# apt-get install make`
+
+
+
+## Compile, install and run dynDeT ##
 
 `$ make all`
 

@@ -37,11 +37,14 @@ SOURCES := $(shell find $(DIRSRCDOMAIN) -name '*.cpp' -printf "%f\n") $(shell fi
 OBJECTS := $(SOURCES:.cpp=.o)
 OBJECTS := $(foreach x,$(OBJECTS),$(DIROBJ)$(x))
 
+.PHONY: write_factory_bitstreams
+
+all: build
 
 build: 
 	@echo "[INFO] Make sure to indicate the Vivado version <make build VERSION=2018> for 2018.3"
 	@echo "[INFO] Make sure to export Vivado tools"
-	make clean dirs generate_xml language dynDeT
+	make clean dirs generate_xml dynDeT
 
 
 dirs:
@@ -82,7 +85,7 @@ install: #generate_xml write_factory_bitstreams dynDeT
 	@echo "[INFO] Make sure to run <make build VERSION=XXXX> before install dynDeT tool"
 	@echo "[INFO] This rule must have root permissions"
 	install -d $(BASE_DIR)/bin
-	install -m 655 ../write_factory_bitstreams/write_factory_bitstreams $(BASE_DIR)/bin/
+	install -m 655 write_factory_bitstreams/write_factory_bitstreams $(BASE_DIR)/bin/
 	install -d $(BASE_DIR)/devices
 	install -d $(BASE_DIR)/static/TCL
 	install -d $(BASE_DIR)/static/template
