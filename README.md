@@ -7,7 +7,7 @@ Exploiting this technique with current design tools can be complex for users, so
 
 
 ## Dependencies ##
-dynDeT depends on other tools or libraries that are listes below.
+dynDeT depends on other tools and libraries that are listed below.
 
 * [CTemplate](https://github.com/OlafvdSpek/ctemplate). Provides an easy, fast and efficient system of text templates for programs written in C++. Used to generate the files describing the system design (design.tcl).
 
